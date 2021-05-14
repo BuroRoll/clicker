@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script src="{% static 'js/index.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="utf-8">
+    <div>
+        <title>DOGE TO THE MOON</title>
+    </div>
+</head>
+<body onload="getUser({{ user.id }})">
+<main>
+    <div align='center'>
+        <h1>DOGE TO THE MOON</h1>
+        <h3> Welcome,
+            <div id="user">%user%</div>
+            !
+        </h3>
+        <div class="logout"><a href="/logout">LOGOUT</a></div>
+        <h3>Сила клика
+            <div id="clickPower">{{ mainCycle.clickPower }}</div>
+        </h3>
+        <h3>У тебя
+            <div id="data">{{ mainCycle.coinsCount }}</div>
+            coins
+        </h3>
+        <input type="image" class="catgirl" src="{% static 'images/dogeElon.png' %}" onclick="callClick()"/>
+        <input type="image" class="catgirl boost" src="{% static 'images/boost.png' %}" onclick="buyBoost({{ user.id }})"/>
+        <h3>
+            <div id="boost_price"></div>
+        </h3>
+
+
+    </div>
+
+</main>
+</body>
+</html>

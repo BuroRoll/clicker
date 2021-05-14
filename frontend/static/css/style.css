@@ -1,0 +1,17 @@
+.catgirl{
+  width: 400px;
+  opacity: 0.7;
+}
+
+.catgirl:hover{
+  opacity: 0.8;
+}
+
+.catgirl:active{
+  opacity: 1;
+}
+
+.boost{
+  height: 300px;
+  width: 250px;
+}

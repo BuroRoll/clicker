@@ -1,0 +1,26 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Title </title>
+  </head>
+  <body>
+    <header><h3>REGISTRATION</h3></header>
+    <main>
+    <div align="center">
+      <form method="post" action="{% url 'registration' %}">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" value="SIGN UP">
+        </form>
+        {% if invalid%}
+       <p>This username is already taken! Please choose another oneq12e312312!</p>
+       {% endif %}
+    </div>
+    <br>
+    <div align="center"><a href="/login">sign in</a></div>
+  </main>
+  </body>
+</html>
