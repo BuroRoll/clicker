@@ -108,6 +108,11 @@ a{
     flex: auto;
     box-sizing: border-box;
     margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.boost-holder:hover{
+    opacity: 0.8;
 }
 
 

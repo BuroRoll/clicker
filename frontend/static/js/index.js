@@ -109,6 +109,7 @@ function render_boost(parent, boost) {
     const div = document.createElement('div')
     div.setAttribute('class', 'boost-holder')
     div.setAttribute('id', `boost-holder-${boost.level}`)
+
     div.innerHTML = `
     
                 <div class="item-1">
@@ -138,5 +139,6 @@ function render_boost(parent, boost) {
         
 
   `
+    div.onclick = function () { buyBoost(boost.level)}
     parent.appendChild(div)
 }
