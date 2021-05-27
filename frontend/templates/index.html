@@ -5,35 +5,71 @@
     <script src="{% static 'js/index.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="utf-8">
-    <div>
-        <title>DOGE TO THE MOON</title>
-    </div>
 </head>
 <body onload="getUser({{ user.id }})">
-<main>
-    <div align='center'>
-        <h1>DOGE TO THE MOON</h1>
-        <h3> Welcome,
-            <div id="user">%user%</div>
-            !
-        </h3>
-        <div class="logout"><a href="/logout">LOGOUT</a></div>
-        <h3>Сила клика
-            <div id="clickPower">{{ mainCycle.clickPower }}</div>
-        </h3>
-        <h3>У тебя
-            <div id="data">{{ mainCycle.coinsCount }}</div>
-            coins
-        </h3>
-        <input type="image" class="catgirl" src="{% static 'images/dogeElon.png' %}" onclick="callClick()"/>
-        <input type="image" class="catgirl boost" src="{% static 'images/boost.png' %}" onclick="buyBoost({{ user.id }})"/>
-        <h3>
-            <div id="boost_price"></div>
-        </h3>
+<div class="wrapper">
+    <header>
+        <div class="header-container">
+            <a href="https://twitter.com/elonmusk">
+                <h1>DOGE TO THE MOON</h1>
+            </a>
+            <div class="delta-header">
+                <h2 class="nickname-header" id="user">%user%</h2>
+                <a href="/logout" style="height: 28px;">log out</a>
+            </div>
+
+        </div>
+    </header>
+    <aside>
+        <div class="boost-wrapper" id="boost-wrapper">
+            <div class="boost-holder" id="boost-holder">
+                <div class="item-1">
+                    <input type="image" style="height: 147px; width: 150px; border-radius: 20px"
+                           src="https://www.dogecoin.nl/assets/yu-dum-fuk.jpeg"
+                           onclick="buyBoost(0)"/>
+                </div>
+
+                <div class="item-2">
+                    <div class="box-1">
+                        <div>Boost Power:
+                            <div id="boostPower">0</div>
+                        </div>
+                        <div>Boost Price
+                            <div id="boostPrice">10</div>
+                        </div>
+
+                    </div>
+                    <div class="box-2">
+                        <div>Уровень буста
+                            <div id="boostLevel" class="">0</div>
+                        </div>
+
+                    </div>
+                </div>
 
 
-    </div>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <div>
+            <div id="user_data">
+                <h3> Your click power is
+                    <div id="clickPower">%clickPower%</div>
+                </h3>
+                <h3>You have
+                    <div id="data">%coins%</div>
+                    coins
+                </h3>
+            </div>
 
-</main>
+            <input type="image" style="width: 500px" class="elon" src="{% static 'images/dogeElon.png' %}"
+                   onclick="callClick()"/>
+
+        </div>
+    </main>
+</div>
+
+
 </body>
 </html>
