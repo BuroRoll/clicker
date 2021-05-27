@@ -112,7 +112,7 @@ function render_boost(parent, boost) {
     div.innerHTML = `
     
                 <div class="item-1">
-                    <input type="image" style="height: 147px; width: 150px; border-radius: 20px" src="https://www.dogecoin.nl/assets/yu-dum-fuk.jpeg"
+                    <input type="image" style="height: 145px; width: 150px; border-radius: 20px" src="https://pbs.twimg.com/profile_images/1384292719284027397/MOw0AJrZ_400x400.png"
                            onclick="buyBoost(${boost.level})"/>
                 </div>
                 

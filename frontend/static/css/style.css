@@ -48,19 +48,17 @@
     display: grid;
     grid-template-columns: 1.5fr 2fr;
     grid-gap: 1rem;
-
-> * {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background: #e2deed;
-    border-radius: 5px;
-    font-weight: bold;
 }
 
-}
-
+/*.wrapper * {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    !*padding: 1rem;*!*/
+/*    background: #e2deed;*/
+/*    border-radius: 5px;*/
+/*    font-weight: bold;*/
+/*}*/
 header {
     grid-column: 1 / 3;
 }
