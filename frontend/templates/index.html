@@ -5,6 +5,9 @@
     <script src="{% static 'js/index.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="utf-8">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAACNssEAITY9AI24ygBHZWUA/P/wAPj/+QAfGR0A+vv/AP34/wCAhocA+/7/AJ63vgD/+/8A//7/ALTS2ACSydkA8e/uAIexvwBnpL0AAAABAFuOoABnrMMALWuKAK/CxADZ6ukA9/f0AG2oyQBalbUAqMvWAHOIoAD7//oAtMvNAP/8+gD+//oAebTJAKW2xQDv7+8AhLHAABUtSACXy9cAmsrUAGKnxwDr+/gAVZGqAHuaqQBnq8EAhbjMAMHY2QAABgsAWXKEAPL/+wD29/4AF0ROAPj/+wD///IA6ufqAJK90gD//f4AAxMXAP//+wDj6vwAm7jMAN/3/wDJvssAn8HMAOn1+QDe3d8Ab528AGaqvwDq/f8A9/PzAPr28wD69PYAxdDmAIi80ABzqr8A+vT/AIm/0AD69/8A+Pz8AOPr5QBojagAh8HWAPj//AD/+PkA+v/8AP73/wC6xcYAMnKYAP3//AD9/f8A//z8AHFvcwD+//wA///8AHquwgDP2e8AXIWaAHOZqADz6+4AHEpqAKC82QCGtr8AS5W4AG6CkQDx//QAj7TCAOHk4wCDnqUAgJ6uAEVlaQD89PcAl7W8AI66ywBncn0AXJu4AP38/QD7//0AX1tUAP3++gCAqLoAcq7VAP///QBulqkAMlptAHe2yQCeuM4AXqHBAOjz9QAGFiIAgLPJAD53nwArSFMAka+0APP3+ADa5O0Aj7e6AIi4zwD19v4ArsPLAJK0wwC+398An6y0AIe80gDO0tMA+fb+AFZ1kACHvtgAhaCsAIOisgD4//4AXJq2AP77+wD//vsA///+AL/GywDFw8IAj8jbAEE4JADU3eIAOFxrAGWlvACCs8oAf5OqAK23zACAl6QAxtHRAPH1/ADy9/kAAAAPAPns/ACOtMQAAAESAPL2/wAMPF4A9vX8AHulqgBkj58A9Pr5AMjS3QDw//8A9Pz/APP//wD4//8A+/z/AG22ywD+/P8ABQ8YADhSYAD//P8A////AHiyyACqtb4AxcrPADReewCmwM0AnaewAEBkaQCBmq4AqKakALLDxAD0/foAR3+nAERrbAC2wsoAdoiUANXR0gC6wsoA//v9AOrs7ABinbgAqra5AJGjrgC11tAARm2NAF2AoQCVpq4AfrnMAFlvbwCLq8YAhbXJAMjO0wCSrr0A1+zkAHqgrwB4pq8AcKu+AP327wD3/vUAhr/VAPz6+wC2xcsA///vAHOwxACMoKYArcvdAP//+ACbvc8A29bZADRgcQDF6voAf7fHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaQTsXSovzz/IpmtHXjtZVVOaOadw4eDGbOrTkBB6XV2RVk4jcX1EoRFqlNibJHo7WoqzwyXiLRVLLgKV1MFGXsm2H4WEoO8U6SKPOG2OQpk139UDAc3eq/HZv4J4pd2YmhiNboFo7U0oJ53l3Cznhgy1DkAxfom5sGYPUkpii4C+vgnay4gLu552cttDUaSqd8cTOsU0qawwvCZkwnzESB56N8CMXyvSEht5WBaxV+MFXdCtPZMpZ5cayoOuYcxUBRlvuD6ic38c62XX1pJJTFCcYzNFAHvwlk8HYB2jPAjRzu6otBefryGavbqHQQpbXAbmsjJTOyC3dL0NdeQ26AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+          rel="icon" type="image/x-icon"/>
+    <title>DOGE TO THE MOON</title>
 </head>
 <body onload="getUser({{ user.id }})">
 <div class="wrapper">
@@ -17,7 +20,6 @@
                 <h2 class="nickname-header" id="user">%user%</h2>
                 <a href="/logout" style="height: 28px;">log out</a>
             </div>
-
         </div>
     </header>
     <aside>
@@ -25,51 +27,45 @@
             <div class="boost-holder" id="boost-holder" onclick="buyBoost(0)">
                 <div class="item-1">
                     <input type="image" style="height: 145px; width: 150px; border-radius: 20px"
-                           src="https://pbs.twimg.com/profile_images/1384292719284027397/MOw0AJrZ_400x400.png"
-                           onclick="buyBoost(0)"/>
+                           src="https://pbs.twimg.com/profile_images/1384292719284027397/MOw0AJrZ_400x400.png"/>
                 </div>
-
                 <div class="item-2">
                     <div class="box-1">
-                        <div>Boost Power:
+                        <div>Сила буста:
                             <div id="boostPower">0</div>
                         </div>
-                        <div>Boost Price
+                        <div>Цена буста
                             <div id="boostPrice">10</div>
                         </div>
-
                     </div>
                     <div class="box-2">
                         <div>Уровень буста
                             <div id="boostLevel" class="">0</div>
                         </div>
-
                     </div>
                 </div>
-
-
             </div>
         </div>
     </aside>
     <main>
         <div>
             <div id="user_data">
-                <h3> Your click power is
+                <h3> Сила клика
                     <div id="clickPower">%clickPower%</div>
                 </h3>
-                <h3>You have
+                <h3>У тебя
                     <div id="data">%coins%</div>
-                    coins
+                    монет
+                </h3>
+                <h3> Сила автоклика
+                    <div id="autoClickPower"> {{ mainCycle.autoClickPower }} </div>
+                    монет каждую секунду
                 </h3>
             </div>
-
             <input type="image" style="width: 500px" class="elon" src="{% static 'images/dogeElon.png' %}"
                    onclick="callClick()"/>
-
         </div>
     </main>
 </div>
-
-
 </body>
 </html>

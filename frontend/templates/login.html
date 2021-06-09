@@ -1,39 +1,49 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-      <meta charset="utf-8">
-    <title>Title </title>
-  </head>
-  <body>
-    <header>
-      <h3> LOGIN </h3>
-    </header>
-    <main>
-    <div align="center">
-      <form method="post" action="{% url 'login' %}" >
-        {% csrf_token %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta charset="utf-8">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAc7XOAJzGzgB7tdYAISkxAHO1xgB7tc4AhLXWAPf3/wAhKSkASnuUAHu1xgCEtc4AWq3WAIS1xgCMtc4AY63WABAYEABrrb0AY63OABghOQDW7+8Aa63OADFzpQBrrcYAUpy9AHOtzgBKnM4A5+/3ADlzpQBCc5QASqXWALXe5wBKnMYAc63GAFqcvQAYISEAvd7nAHutxgBSnMYAnNbeACEhIQBSpc4AQkpSAKXW3gBSpcYAY6W9AFqlzgCc1ucAWqXGAMbn5wBClL0Aa6W9ANbn9wApOTkAa5ytAGultQA5lMYASpS9AHOlvQApOUoAa3NzAEqUtQBrpcYAe5ytAIScnABSlLUAlM7eAIzO7wAxQkoAWpS1AJzO3gBzvd4AnM7WAHu93gA5jL0Apc7eAHu91gCczucApc7WAIS93gApMTkAMVprAIS91gD3//8Arc7WAEKMtQCUpaUAhL3OAIy91gD///8AOVqEAHOUpQCMxt4AjL3OAEqMrQBjtdYAa7XeAITG5wCUvc4AMXu1AEpjcwBrtdYAlMbWAJS9xgBrtc4AlMbOAJzG1gBztdYAlMbnADGEtQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATihYFkJCRgsOJgVYWWMGAAhdAWkaGC4uLiIiMTEBBgBaXVkBIiI0DF4mNC1kJxMAWkdZJhIYIiImYyYnM24hAAgsZUUJPDciD14MBjMzLwAVSVErXDg7DgsLDAwZOlAAJVUkKVdoagJPa14mPzE1AFQgJBFBQ1NdXk9MZ1MNWgBaMkpKUEgKK0BnAwYqKloAWjBHNmFsRj1SMS8TS2BaAFptRARNM1lTJy8QG2QIWgBaWmJhXRMjNCMtVhQ+WloAWlocEEoTOSoQbh1bW1RaAFpaWlofZDVUWloxXx5UWgBaWlpaZgdaWlpaWhYXWloAWlpaWmFaWlpaWlpaHFpaAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAA=" rel="icon" type="image/x-icon" />
+    <title>DOGE LOGIN</title>
+</head>
+<body>
+<header><h3>LOGIN</h3></header>
+<main>
+    <div>
+        <div class="back-div"></div>
+        <div>
+            <div align="center">
 
-        <div class="form-group">
-            <label for="username"> Username: </label>
-            <br>
-            <input type="text" name="username" id="username" placeholder="Username">
-        </div>
-        <div class="form-group">
-            <label for="password"> Password: </label>
-            <br>
-            <input type="text" name="password" id="password" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <input type="submit" value="Login">
-        </div>
-       {% if invalid%}
-       <p> Incorrect login or password. </p>
-       {% endif %}
-      </form>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
 
+                    <div class="form-group">
+                        <label for="username"> Логин: </label>
+                        <br>
+                        <input type="text" name="username" id="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"> Пароль: </label>
+                        <br>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login">
+                    </div>
+                    {% if invalid %}
+                        <p> Incorrect login or password. </p>
+                    {% endif %}
+                </form>
+
+            </div>
+        <br>
+            <div align="center"><a href="/registration">Зарегистрироваться</a></div>
+        </div>
     </div>
-    <div align="center"><a href="/registration">sign up</a></div>
-    </main>
-  </body>
+
+
+</main>
+</body>
 </html>

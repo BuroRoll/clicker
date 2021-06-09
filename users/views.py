@@ -44,9 +44,21 @@ def call_click(request):
 
 @api_view(['POST'])
 def buy_boost(request):
-    click_power, coins_count, level, price, boost_power = services.clicker_services.buy_boost(request)
-    return Response({'clickPower': click_power,
-                     'coinsCount': coins_count,
+    main_cycle, level, price, power, boost_type = services.clicker_services.buy_boost(request)
+    return Response({'clickPower': main_cycle.clickPower,
+                     'coinsCount': main_cycle.coinsCount,
+                     'autoClickPower': main_cycle.autoClickPower,
                      'level': level,
                      'price': price,
-                     'boost_power': boost_power})
+                     'power': power,
+                     'boost_type': boost_type})
+
+
+@api_view(['POST'])
+def set_maincycle(request):
+    user = request.user
+    data = request.data
+    MainCycle.objects.filter(user=user).update(
+        coinsCount=data['coinsCount']
+    )
+    return Response({'success': 'ok'})
